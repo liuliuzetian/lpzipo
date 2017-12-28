@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.alibaba.com/schema/stat"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.alibaba.com/schema/stat http://www.alibaba.com/schema/stat.xsd">
+
+    <!-- 但在实际工程中会包括很多配置，我们按照官方推荐根据不同的业务模块来划分不同容器中注册不同类型的Bean：Spring父容
+        器负责所有其他非@Controller注解的Bean的注册，
+        而SpringMVC只负责@Controller注解的Bean的注册，使得他们各负其责、明确边界。配置方式如下
+     -->
+
+    <!--启用spring注解
+        使用<context:annotation- config/>隐式地向 Spring容器注册
+        AutowiredAnnotationBeanPostProcessor、
+        RequiredAnnotationBeanPostProcessor、
+        CommonAnnotationBeanPostProcessor
+        以及PersistenceAnnotationBeanPostProcessor
+        这4个BeanPostProcessor。
+-->
+    <context:annotation-config/>
+
+    <!-- 扫描包 -->
+    <!--负责所有需要注册的Bean的扫描和注册工作。只扫描Controller注解-->
+    <context:component-scan base-package="com.lpzipo.controller" use-default-filters="false" >
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+    <!-- 　另外，还有一个和SpringMVC相关如下配置，经过验证，这个是SpringMVC必须要配置的，因为它声明了
+        @RequestMapping、@RequestBody、@ResponseBody等。并且，该配置默认加载很多的参数绑定方法，比如json转换解析器等。
+         <mvc:annotation-driven/>
+        spring3.1之后的版本和以下配置方式等价
+         -->
+    <mvc:annotation-driven/>
+    <!--配置注解控制器映射器,它是SpringMVC中用来将Request请求URL到映射到具体Controller-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <!--配置注解控制器映射器,它是SpringMVC中用来将具体请求映射到具体方法-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+</beans>
