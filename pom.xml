@@ -23,6 +23,7 @@
         <druid.version>1.0.29</druid.version>
         <jackson.version>1.9.13</jackson.version>
         <fastjson.version>1.2.6</fastjson.version>
+        <servlet.version>3.0.1</servlet.version>
     </properties>
 
     <dependencyManagement>
@@ -99,7 +100,7 @@
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-mapper-asl</artifactId>
-                <version>${jackson.version}}</version>
+                <version>${jackson.version}</version>
             </dependency>
 
             <!--fastjson-->
@@ -107,6 +108,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
