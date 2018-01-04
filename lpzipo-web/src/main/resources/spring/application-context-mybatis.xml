@@ -53,14 +53,15 @@
     <!-- 配置SqlSessionFactoryBean -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
         <!-- mapper和resultmap配置路径 -->
-        <property name="mapperLocations">
-            <list>
-                <!--表示在com.netease.cpp.mapper包下所有目录中，以.xml结尾所有文件 -->
-                <value>classpath:mybatis/com/lpzipo/dao/mapper/*.xml</value>
-            </list>
+        <property name="mapperLocations" value="classpath:mybatis/com/lpzipo/dao/mapper/*.xml">
         </property>
     </bean>
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
 </beans>
 

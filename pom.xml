@@ -26,6 +26,7 @@
         <fastjson.version>1.2.6</fastjson.version>
         <servlet.version>3.0.1</servlet.version>
         <log4j.version>1.7.5</log4j.version>
+        <mysql.version>5.1.9</mysql.version>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +72,12 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
                 <version>${spring.version}</version>
             </dependency>
 
@@ -122,6 +129,15 @@
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>${log4j.version}</version>
             </dependency>
+
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 </project>

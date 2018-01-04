@@ -65,8 +65,11 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="module" module-name="lpzipo-service" />
     <orderEntry type="module" module-name="lpzipo-dao" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.9" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.3.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.3.1.RELEASE" level="project" />
   </component>
 </module>

@@ -12,5 +12,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="lpzipo-dao" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.9" level="project" />
   </component>
 </module>
