@@ -16,4 +16,8 @@
     <!-- -->
     <!--  -->
 
+    <plugins>
+        <plugin interceptor="com.lpzipo.dao.intercept.PageInterceptor"></plugin>
+    </plugins>
+
 </configuration>

@@ -2,7 +2,6 @@ package com.lpzipo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * handler method 参数绑定常用的注解,我们根据他们处理的Request的不同内容部分分为四类：（主要讲解常用类型）
@@ -61,12 +60,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/")
 public class BaseController {
 
-    @RequestMapping(value = "/info" ,method = RequestMethod.GET)
-    public String getUserInfo(String param){
-        return  "";
-    }
 
 }
